@@ -5,7 +5,7 @@ const eslintLoader = {
   }
 }
 
-module.exports = [
+const rules = [
   // Add support for native node modules
   {
     test: /\.node$/,
@@ -21,13 +21,19 @@ module.exports = [
           outputAssetBase: 'native_modules'
         }
       },
-      eslintLoader
+      eslintLoader,
+      {
+        loader: 'babel-loader'
+      }
     ]
   },
   {
     test: /\.tsx?$/,
     exclude: /(node_modules|\.webpack)/,
     use: [
+      {
+        loader: 'babel-loader'
+      },
       {
         loader: 'ts-loader',
         options: {
@@ -38,3 +44,5 @@ module.exports = [
     ]
   }
 ]
+
+module.exports = rules

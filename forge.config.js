@@ -29,8 +29,8 @@ const forge = {
           config: './webpack.renderer.config.js',
           entryPoints: [
             {
-              html: './src/index.html',
-              js: './src/renderer.ts',
+              html: './public/index.html',
+              js: './src/main.ts',
               name: 'main_window'
             }
           ]

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "allowJs": true,
     "module": "ES6",
     "skipLibCheck": true,
@@ -15,6 +16,7 @@
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "index.ts"
   ]
 }

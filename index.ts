@@ -1,5 +1,5 @@
 import { app, BrowserWindow } from 'electron'
-declare const MAIN_WINDOW_WEBPACK_ENTRY: any
+declare const MAIN_WINDOW_WEBPACK_ENTRY: string
 
 if (require('electron-squirrel-startup')) {
   app.quit()
@@ -7,8 +7,12 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800
+    height: 672,
+    width: 1000,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
